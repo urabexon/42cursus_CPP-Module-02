@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:42:48 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/06 21:56:11 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/06 23:02:39 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Fixed {
 	
 	private:
 		int	_fixed_point_num;						// 固定小数点数の値を格納する変数
-		static const int	bit = 8;				// 小数ビット数を格納する静的定数整数
+		static const int	_bit = 8;				// 小数ビット数を格納する静的定数整数
 };
 
 #endif

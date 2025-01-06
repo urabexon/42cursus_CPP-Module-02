@@ -6,11 +6,12 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 22:20:26 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/06 22:21:13 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/06 22:26:07 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
+
 int main( void ) {
 Fixed a;
 Fixed const b( 10 );
