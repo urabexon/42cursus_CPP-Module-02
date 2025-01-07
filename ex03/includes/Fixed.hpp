@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 16:40:36 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/07 22:13:18 by hurabe           ###   ########.fr       */
+/*   Created: 2025/01/07 21:53:46 by hurabe            #+#    #+#             */
+/*   Updated: 2025/01/07 22:13:56 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ class Fixed {
 		bool	operator <= (const Fixed &right) const;
 		bool	operator == (const Fixed &right) const;
 		bool	operator != (const Fixed &right) const;
-
+		
 		Fixed	operator + (const Fixed &right) const;
 		Fixed	operator - (const Fixed &right) const;
 		Fixed	operator * (const Fixed &right) const;
 		Fixed	operator / (const Fixed &right) const;
-
+		
 		Fixed	&operator++();						//  前置インクリメント
 		Fixed	operator++(int);					//  後置インクリメント
 		Fixed	&operator--();						//  前置デクリメント
@@ -51,7 +51,7 @@ class Fixed {
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
-		int		toInt(void) const;
+		int		toInt(void) const
 
 	private:
 		int	_fixed_point_num;						// 固定小数点数の値を格納する変数
