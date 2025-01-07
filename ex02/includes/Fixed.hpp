@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:40:36 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/07 18:50:15 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/07 21:33:31 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class Fixed {
 		bool	operator == (const Fixed &right) const;
 		bool	operator != (const Fixed &right) const;
 
-		Fixed	operator+(const Fixed &right) const;
-		Fixed	operator-(const Fixed &right) const;
-		Fixed	operator*(const Fixed &right) const;
-		Fixed	operator/(const Fixed &right) const;
+		Fixed	operator + (const Fixed &right) const;
+		Fixed	operator - (const Fixed &right) const;
+		Fixed	operator * (const Fixed &right) const;
+		Fixed	operator / (const Fixed &right) const;
 
 		Fixed	&operator++();						//  前置インクリメント
 		Fixed	operator++(int);						//  後置インクリメント
