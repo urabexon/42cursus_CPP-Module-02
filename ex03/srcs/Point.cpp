@@ -6,29 +6,30 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:53:59 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/07 22:33:38 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/08 19:04:36 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-bool	bsp( Point const a, Point const b, Point const c, Point const point) {
-	Fixed ax(a.getRawBitsX());
-	Fixed ay(a.getRawBitsY());
-	Fixed bx(b.getRawBitsX());
-	Fixed by(b.getRawBitsY());
-	Fixed cx(c.getRawBitsX());
-	Fixed cy(c.getRawBitsY());
-	Fixed px(point.getRawBitsX());
-	Fixed py(point.getRawBitsY());
+Point::Point() {}
 
-	// pa->pb
-	Fixed cross_ab = (ax - px) * (by - py) - (ay - py) * (bx - px);
-	// pb->pc
-	Fixed cross_bc = (bx - px) * (cy - py) - (by - py) * (cx - px);
-	// pc->pa
-	Fixed cross_ca = (cx - px) * (ay - py) - (cy - py) * (ax - px);
+Point::Point(const float num_x, const float num_y) : x(num_x), y(num_y) {}
 
-	return ((cross_ab.toFloat() > 0 && cross_bc.toFloat() > 0 && cross_ca.toFloat() > 0) 
-		|| (cross_ab.toFloat() < 0 && cross_bc.toFloat() < 0 && cross_ca.toFloat() < 0)) ? true : false;
+Point::Point(const Point & origin) : x(origin.getRawBitsX()), y(origin.getRawBitsY()) {}
+
+Point::~Point() {}
+
+Point& Point::operator = (const Point &origin) {
+	if (this == &origin)
+		return *this;
+	return *this;
+}
+
+Fixed Point::getRawBitsX() const {
+	return (this->x);
+}
+
+Fixed Point::getRawBitsY() const {
+	return (this->y);
 }

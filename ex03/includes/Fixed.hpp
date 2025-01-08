@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:53:46 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/07 22:13:56 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/08 18:58:30 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Fixed {
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
-		int		toInt(void) const
+		int		toInt(void) const;
 
 	private:
 		int	_fixed_point_num;						// 固定小数点数の値を格納する変数
