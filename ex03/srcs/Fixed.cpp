@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:53:53 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/09 20:07:36 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/09 22:38:19 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,7 @@ Fixed	&Fixed::operator++() {
  * *int型の引数は，一般的には，引数の受け渡しには使用されない
  */
 Fixed	Fixed::operator++(int) {
-	Fixed res = *this;
-	res._fixed_point_num = this->_fixed_point_num++;
+	Fixed res = *this->_fixed_point_num++;
 	return res;
 }
 
@@ -129,8 +128,7 @@ Fixed	&Fixed::operator--() {
  * *int型の引数は，一般的には，引数の受け渡しには使用されない
  */
 Fixed	Fixed::operator--(int) {
-	Fixed res = *this;
-	res._fixed_point_num = this->_fixed_point_num--;
+	Fixed res = *this->_fixed_point_num--;
 	return res;
 }
 

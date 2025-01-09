@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:53:51 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/09 20:30:38 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/09 22:35:29 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point) {
 	　・false: 点が三角形の外部または返上にある場合 
 	*/
 	return ((cross_ab.toFloat() > 0 && cross_bc.toFloat() > 0 && cross_ca.toFloat() > 0) 
-		|| (cross_ab.toFloat() < 0 && cross_bc.toFloat() < 0 && cross_ca.toFloat() < 0)) ? true : false;
+		|| (cross_ab.toFloat() < 0 && cross_bc.toFloat() < 0 && cross_ca.toFloat() < 0));
 }
