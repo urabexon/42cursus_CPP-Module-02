@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:42:54 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/06 22:10:53 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:35:13 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
+// ゲッター(プライベート変数_fixed_point_numの値を外部から取得するための関数)
 int		Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_fixed_point_num;
 }
 
+// セッター(プライベート変数_fixed_point_numの値を外部から設定するための関数)
 void	Fixed::setRawBits(int const raw) {
 	this->_fixed_point_num = raw;
 }

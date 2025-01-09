@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:40:40 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/07 21:47:18 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/09 19:53:27 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,42 +42,52 @@ Fixed&	Fixed::operator = (const Fixed &copy) {
 	return *this;
 }
 
+// 大なり比較
 bool	Fixed::operator > (const Fixed &right) const {
 	return this->_fixed_point_num > right.getRawBits();
 }
 
+// 小なり比較
 bool	Fixed::operator < (const Fixed &right) const {
 	return this->_fixed_point_num < right.getRawBits();
 }
 
+// 大なりイコール比較
 bool	Fixed::operator >= (const Fixed &right) const {
 	return this->_fixed_point_num >= right.getRawBits();
 }
 
+// 小なりイコール比較
 bool	Fixed::operator <= (const Fixed &right) const {
 	return this->_fixed_point_num <= right.getRawBits();
 }
 
+// 等価比較
 bool	Fixed::operator == (const Fixed &right) const {
 	return this->_fixed_point_num == right.getRawBits();
 }
 
+// 非等価比較
 bool	Fixed::operator != (const Fixed &right) const {
 	return this->_fixed_point_num != right.getRawBits();
 }
 
+// 加算
 Fixed	Fixed::operator + (const Fixed &right) const {
 	return Fixed(this->toFloat() + right.toFloat());
 }
 
+// 減算
 Fixed	Fixed::operator - (const Fixed &right) const {
 	return Fixed(this->toFloat() - right.toFloat());
 }
 
+// 乗算
 Fixed	Fixed::operator * (const Fixed &right) const {
 	return Fixed(this->toFloat() * right.toFloat());
 }
 
+// 除算
 Fixed	Fixed::operator / (const Fixed &right) const {
 	return Fixed(this->toFloat() / right.toFloat());	
 }
@@ -124,26 +134,32 @@ Fixed	Fixed::operator--(int) {
 	return res;
 }
 
+// 最小値を返す(非const参照用)
 Fixed &Fixed::min(Fixed &left, Fixed &right) {
 	return (left < right) ? left : right;
 }
 
+// 最小値を返す(const参照用)
 const Fixed &Fixed::min(const Fixed &left, const Fixed &right) {
 	return (left < right) ? left : right;
 }
 
+// 最大値を返す(非const参照用)
 Fixed &Fixed::max(Fixed &left, Fixed &right) {
 	return (left > right) ? left : right;
 }
 
+// 最大値を返す(const参照用)
 const Fixed &Fixed::max(const Fixed &left, const Fixed &right) {
 	return (left > right) ? left : right;
 }
 
+// ゲッター(プライベート変数_fixed_point_numの値を外部から取得するための関数)
 int		Fixed::getRawBits(void) const {
 	return this->_fixed_point_num;
 }
 
+// セッター(プライベート変数_fixed_point_numの値を外部から設定するための関数)
 void	Fixed::setRawBits(int const raw) {
 	this->_fixed_point_num = raw;
 }
@@ -158,7 +174,8 @@ int		Fixed::toInt(void) const {
 	return _fixed_point_num >> _bit;
 }
 
+// 出力ストリーム演算子のオーバーロード
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
-	out << fixed.toFloat();
+	out << fixed.toFloat(); // 浮動小数点表現を出力
 	return out;
 }

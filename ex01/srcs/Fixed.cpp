@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 22:20:28 by hurabe            #+#    #+#             */
-/*   Updated: 2025/01/06 23:31:03 by hurabe           ###   ########.fr       */
+/*   Updated: 2025/01/09 19:00:28 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,12 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
+// ゲッター(プライベート変数_fixed_point_numの値を外部から取得するための関数)
 int		Fixed::getRawBits(void) const {
 	return this->_fixed_point_num;
 }
 
+// セッター(プライベート変数_fixed_point_numの値を外部から設定するための関数)
 void	Fixed::setRawBits(int const raw) {
 	this->_fixed_point_num = raw;
 }
@@ -67,7 +69,8 @@ int		Fixed::toInt(void) const {
 	return _fixed_point_num >> _bit;
 }
 
+// 出力ストリーム演算子のオーバーロード
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
-	out << fixed.toFloat();
+	out << fixed.toFloat(); // 浮動小数点表現を出力
 	return out;
 }
